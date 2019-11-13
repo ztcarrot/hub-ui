@@ -1,12 +1,14 @@
 # encoding=utf-8
 from selenium import webdriver
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions as EC
+from util import logger
 from pages.homePage import homePage as hubHome
-browser = webdriver.Chrome("./drivers/chromedriver")
-home = hubHome(browser)
+home = hubHome("./drivers/chromedriver")
 home.open()
+home.searchInSearchBar("people")
+#
+home.browser.find_element_by_link_text("People Central")
+
+logger.info("search people and find people central")
 home.close()
 #browser.get("https://www.baidu.com/")
 '''
