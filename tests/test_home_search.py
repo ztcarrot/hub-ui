@@ -8,21 +8,12 @@ from pages.homePage import homePage as hubHome
 import pytest
 
 
-
-
+@pytest.mark.Major
 @pytest.mark.usefixtures("beforeEach")
 @pytest.mark.usefixtures("beforeAll")
 class TestHomeSearch(TestBase):
 
-
-
-    '''
-    # @pytest.mark.Critical
-    # @pytest.mark.Major
-    # @pytest.mark.Minor
-    # @pytest.mark.Low
-    #@Logging.log_call
-    '''
+    @pytest.mark.Critical
     def test_search_for_featured(self):
 
         home = hubHome("./drivers/chromedriver")
@@ -37,6 +28,8 @@ class TestHomeSearch(TestBase):
         Logging.Logger().logger.info("search people and find people central")
         home.close()
 
+    @pytest.mark.Minor
+    @pytest.mark.Low
     def test_search_for_featured_1(self):
 
         home = hubHome("./drivers/chromedriver")
