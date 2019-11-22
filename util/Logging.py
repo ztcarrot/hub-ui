@@ -1,9 +1,9 @@
-#!/usr/bin/env python
 # coding:UTF-8
 
 import os ,logging ,sys ,time
 
-def log_call(func):
+
+def log_call_time(func):
     def proxy(*args, **kwargs):
         func_name = func.__module__+"-->"+func.__name__
         time_start = time.time()

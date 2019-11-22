@@ -1,3 +1,5 @@
+allure-pytest==2.8.6
+allure-python-commons==2.8.6
 apipkg==1.5
 appnope==0.1.0
 asn1crypto==1.2.0

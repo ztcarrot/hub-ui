@@ -1,6 +1,5 @@
 # encoding=utf-8
 from util import Logging
-from pages.homePage import homePage as hubHome
 import pytest
 
 
@@ -12,6 +11,7 @@ def beforeEach():
     # after each
     Logging.Logger().logger.info('\n==== after each()')
 
+
 @pytest.fixture(scope="session")
 def beforeAll():
     Logging.Logger().logger.info('\n== before All()')
@@ -19,7 +19,6 @@ def beforeAll():
     yield "beforeAll"
     # after all
     Logging.Logger().logger.info('\n== after all()')
-
 
 
 class TestBase:

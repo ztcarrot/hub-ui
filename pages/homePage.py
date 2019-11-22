@@ -6,18 +6,18 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from pages.PageBase import Page
+from util.configUtil import Configger
 
-
-class homePage(Page):
+class HomePage(Page):
 
     # @Logging.log_call
     # def __init__(self,browserType):
     #     browser = webdriver.Chrome(browserType)
     #     self.browser = browser
 
-    @Logging.log_call
+    @Logging.log_call_time
     def open(self):
-        self.browser.get("https://hubdev1.corp.ebay.com")
+        self.browser.get(Configger().config["Pages"]["hub_url"])
         self.browser.maximize_window()
         # wait for feed section loaded
         self.waitForLoaded("hub-home-yourfeeds", By.CLASS_NAME)
@@ -26,7 +26,7 @@ class homePage(Page):
     # def close(self):
     #     self.browser.close()
 
-    @Logging.log_call
+    @Logging.log_call_time
     def searchInSearchBar(self, keyword):
         searchBar = self.browser.find_element_by_id("hubsearch")
         assert EC.title_is("Hub Search")
